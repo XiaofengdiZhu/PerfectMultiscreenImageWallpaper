@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<svg width="44px" height="44px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <path d="M 37 29
+                     a 17 17 0 1 1 0 -14
+                     " stroke="#eeeeee" stroke-width="7" fill="none"/>
+    <polygon points="44,8 27,17 40,22" fill="#eeeeee"/>
+</svg>

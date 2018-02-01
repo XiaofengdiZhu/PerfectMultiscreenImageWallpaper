@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Wallpaper test</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.base64.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/jquery.numpad.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.numpad.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+<div id="wallpapersContainer"></div>
+
+<div id="layerBetweenWallpapersAndWidgets"></div>
+
+<div id="widgets"></div>
+
+<div id="layerBetweenWidgetsAndSettings"></div>
+
+<div id="settings">
+    <div id="edgeForOpenSettingsDialogButton" class="setting"></div>
+    <div id="buttonsFolder" class="setting">
+        <div id="openSettingsDialogButton" class="setting"></div>
+        <div id="nextWallpapersButton" class="setting"></div>
+    </div>
+    <div id="settingsDialog" class="setting">
+        <div id="topBarInSettingsDialog">
+            <div style="padding:16px 20px;font-size:28px;line-height: 28px;height:28px;vertical-align:top;">设置</div>
+        </div>
+        <div id="exportButtonInSettingsDialog" title="导出"></div>
+        <div id="closeButtonInSettingsDialog" title="关闭"></div>
+        <div id="contentBox">
+            <div class="title">一般设置</div>
+            <div class="content">
+                <span>更新间隔</span>
+                <select class="option" id="updateInterval">
+                    <option value="5000">5秒(仅供测试)</option>
+                    <option value="60000">1分钟</option>
+                    <option value="300000">5分钟</option>
+                    <option value="600000">10分钟</option>
+                    <option value="1800000">30分钟</option>
+                    <option value="3600000">1小时</option>
+                    <option value="7200000">2小时</option>
+                    <option value="14400000">4小时</option>
+                    <option value="21600000">6小时</option>
+                    <option value="43200000">12小时</option>
+                    <option value="86400000">24小时</option>
+                </select>
+            </div>
+            <div class="content">
+                <span>逐一更换</span>
+                <div class="switch option">
+                    <label>
+                        <input type="checkbox" id="changeOneByOne">
+                        <span class="lever"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="content">
+                <span>背景颜色</span>
+                <input type="text" class="option" id="backgroundColor">
+            </div>
+            <div class="content">
+                <span>显示小部件</span>
+                <div class="switch option">
+                    <label>
+                        <input type="checkbox" id="showWidgets">
+                        <span class="lever"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="title">壁纸初始位置</div>
+            <div class="content">
+                <span>水平</span>
+                <select class="option" id="horizon">
+                    <option value="left">左</option>
+                    <option value="center">中</option>
+                    <option value="right">右</option>
+                </select>
+            </div>
+            <div class="content">
+                <span>垂直</span>
+                <select class="option" id="vertical">
+                    <option value="top">上</option>
+                    <option value="center">中</option>
+                    <option value="bottom">下</option>
+                </select>
+            </div>
+            <div class="title">显示器设置</div>
+            <div class="content">
+                <span>显示器数量</span><br/><span style="font-size: 13px;color:grey">(重新载入配置生效)</span>
+                <div class="option">
+                    <input type="text" id="monitorCount_text" class="rangeValue" value="2"
+                           style="width:10px;padding-left:0px;">
+                    <input type="range" id="monitorCount_range" min="1" max="6" step="1" value="2"
+                           style="width:100px;float:right;margin-top:10px;">
+                </div>
+            </div>
+            <br/>
+            <div class="content">
+                <span>选择要设置的显示器</span>
+                <select class="option" style="width:60px;" id="monitorToSet_select">
+                    <option value="0" selected>1</option>
+                </select>
+            </div>
+            <div class="content" style="height:23px;overflow: hidden;">
+                <span>壁纸文件夹</span>
+                <div id="expandWallpaperFolders" class="option">╋</div>
+                <div id="wallpaperFolders" style="width:100%;">
+                    <div class="wallpaperFolder" style="padding-bottom: 0px;color:grey;">
+                        <span style="margin-left: 40px;">名称</span>
+                        <span style="margin-left: 160px">数量</span>
+                    </div>
+                    <div class="wallpaperFolder">
+                        <input type="checkbox" class="filled-in" id="wallpaperFolderCheckWE随机图片文件夹"/>
+                        <label for="wallpaperFolderCheckWE随机图片文件夹" class="wallpaperFolderName">WE随机图片文件夹</label>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <span>宽度</span>
+                <div class="option"><input type="text" id="inputWidth" class="inputPx">px</div>
+            </div>
+            <div class="content">
+                <span>高度</span>
+                <div class="option"><input type="text" id="inputHeight" class="inputPx">px</div>
+            </div>
+            <div class="content">
+                <span>左间距</span>
+                <div class="option"><input type="text" id="inputLeft" class="inputPx">px</div>
+            </div>
+            <div class="content">
+                <span>上间距</span>
+                <div class="option"><input type="text" id="inputTop" class="inputPx">px</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="logs">
+</div>
+</body>
+
+<script>document.write("<script src=\"user-config.js?" + Math.random() + "\"><" + "/script>");</script>
+<script>document.write("<script src=\"js/configs.js?" + Math.random() + "\"><" + "/script>");</script>
+<script>document.write("<script src=\"js/forWallpaperEngine.js?" + Math.random() + "\"><" + "/script>");</script>
+<script>document.write("<script src=\"js/common.js?" + Math.random() + "\"><" + "/script>");</script>
+<script>document.write("<script src=\"js/components.js?" + Math.random() + "\"><" + "/script>");</script>
+<script>document.write("<script src=\"js/main.js?" + Math.random() + "\"><" + "/script>");</script>
+<script>
+    //$("input[type='text']").numpad();
+</script>
+</html>

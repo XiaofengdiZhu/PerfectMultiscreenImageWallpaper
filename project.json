@@ -1,0 +1,194 @@
+{
+  "file": "index.html",
+  "general": {
+    "properties": {
+      "schemecolor": {
+        "order": 0,
+        "text": "ui_browse_properties_scheme_color",
+        "type": "color",
+        "value": "0 0 0"
+      },
+      /*"configFile": {
+        "order": 1,
+        "text": "<br/>配置文件<br/><br />",
+        "type": "file"
+      },*/
+      "configText":{
+        "order":2,
+        "text":"<b>以下设置将覆盖配置文件中部分设置</b>",
+        "type":"text"
+      },
+      "updateInterval": {
+        "order": 3,
+        "text": "更新间隔",
+        "options": [
+          {
+            "label": "5秒(仅供测试)",
+            "value": 0
+          },
+          {
+            "label": "1分钟",
+            "value": 1
+          },
+          {
+            "label": "5分钟",
+            "value": 2
+          },
+          {
+            "label": "10分钟",
+            "value": 3
+          },
+          {
+            "label": "30分钟",
+            "value": 4
+          },
+          {
+            "label": "1小时",
+            "value": 5
+          },
+          {
+            "label": "2小时",
+            "value": 6
+          },
+          {
+            "label": "4小时",
+            "value": 7
+          },
+          {
+            "label": "6小时",
+            "value": 8
+          },
+          {
+            "label": "12小时",
+            "value": 9
+          },
+          {
+            "label": "24小时",
+            "value": 10
+          }
+        ],
+        "type": "combo",
+        "value": 5
+      },
+      "changeOneByOne": {
+        "order": 4,
+        "text": "逐一更换",
+        "type": "bool",
+        "value": true
+      },
+      "backgroundColor": {
+        "order": 5,
+        "text": "背景颜色",
+        "type": "color",
+        "value": "0 0 0"
+      },
+      "title1":{
+        "order":6,
+        "text":"<br/><b>壁纸初始位置</b>",
+        "type":"text"
+      },
+      "horizon": {
+        "order": 7,
+        "text": "水平",
+        "options": [
+          {
+            "label": "左",
+            "value": "left"
+          },
+          {
+            "label": "中",
+            "value": "center"
+          },
+          {
+            "label": "右",
+            "value": "right"
+          }
+        ],
+        "type": "combo",
+        "value": "center"
+      },
+      "vertical": {
+        "order": 8,
+        "text": "垂直",
+        "options": [
+          {
+            "label": "上",
+            "value": "top"
+          },
+          {
+            "label": "中",
+            "value": "center"
+          },
+          {
+            "label": "下",
+            "value": "center"
+          }
+        ],
+        "type": "combo",
+        "value": "bottom"
+      },
+      "tipText":{
+        "order":9,
+        "text":"<br/><b>启动该壁纸后你可以在右上角的设置菜单中添加小部件，调整显示器位置</b>",
+        "type":"text"
+      },
+      "showWidgets": {
+        "order": 10,
+        "text": "显示小部件",
+        "type": "bool",
+        "value": true
+      },
+      "monitorCount": {
+        "order": 11,
+        "text":"显示器数量<br/><small>(重启生效)</small>",
+        "max":6,
+        "min":1,
+        "type":"slider",
+        "value":2
+      },
+      "wallpapersDirectory0": {
+        "order": 12,
+        "text": "<br/>显示器1随机图片文件夹<br/>",
+        "type": "directory",
+        "mode": "ondemand"
+      },
+      "wallpapersDirectory1": {
+        "condition" : "monitorCount.value >= 2",
+        "order": 13,
+        "text": "<br/>显示器2随机图片文件夹<br/>",
+        "type": "directory",
+        "mode": "ondemand"
+      },
+      "wallpapersDirectory2": {
+        "condition" : "monitorCount.value >= 3",
+        "order": 14,
+        "text": "<br/>显示器3随机图片文件夹<br/>",
+        "type": "directory",
+        "mode": "ondemand"
+      },
+      "wallpapersDirectory3": {
+        "condition" : "monitorCount.value >= 4",
+        "order": 15,
+        "text": "<br/>显示器4随机图片文件夹<br/>",
+        "type": "directory",
+        "mode": "ondemand"
+      },
+      "wallpapersDirectory4": {
+        "condition" : "monitorCount.value >= 5",
+        "order": 16,
+        "text": "<br/>显示器5随机图片文件夹<br/>",
+        "type": "directory",
+        "mode": "ondemand"
+      },
+      "wallpapersDirectory5": {
+        "condition" : "monitorCount.value >= 6",
+        "order": 17,
+        "text": "<br/>显示器6随机图片文件夹<br/>",
+        "type": "directory",
+        "mode": "ondemand"
+      }
+    }
+  },
+  "title": "完美多屏图片壁纸 Perfect Multiscreen Image Wallpaper",
+  "type": "web"
+}
