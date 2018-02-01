@@ -12,6 +12,16 @@
 - 支持任意web小部件，可拖拽、缩放
 - 全平台通用
 
+
+
+[github项目主页](https://github.com/XiaofengdiZhu/PerfectMultiscreenImageWallpaper)
+
+[直接下载最新版](https://github.com/XiaofengdiZhu/PerfectMultiscreenImageWallpaper/archive/master.zip)
+
+[在线预览](https://xiaofengdizhu.github.io/PerfectMultiscreenImageWallpaper/)
+
+
+
 ## 二、功能和使用
 
 ### 1.启用本壁纸
